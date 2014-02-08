@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
 
-@WebServlet(urlPatterns = "/home")
+@WebServlet("/home")
 @MultipartConfig
 public class HomeServlet extends HttpServlet {
 
@@ -21,18 +21,7 @@ public class HomeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        System.out.println("***** in HomeServlet.doGet()");
-
-        response.setContentType("text/html");
-
-        PrintWriter out = response.getWriter();
-        out.write("<!DOCTYPE html><html><head><title>${artifactId}</title></head>");
-        out.write("<body>");
-        out.write("<h2>Welcome Home Rusty!</h2>");
-        out.write("</body>");
-        out.write("</html>");
-
+        getServletConfig().getServletContext().getRequestDispatcher("/home.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
