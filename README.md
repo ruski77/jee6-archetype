@@ -1,7 +1,12 @@
-== Build Archetype ==
+Jee6 / Twitter bootstrap Archetype
+==================================
 
-mvn install
+To build, follow these steps:
 
-cd ..
+1. mvn install
 
-mvn archetype:generate -DarchetypeCatalog=local
+2. cd ..
+
+3. mvn archetype:generate -DarchetypeCatalog=local
+
+4. Choose the jee6-archetype
